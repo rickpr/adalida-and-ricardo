@@ -37,9 +37,9 @@ class CarouselsController < ApplicationController
   # PATCH/PUT /carousels/1.json
   def update
     if @carousel.update(carousel_params)
-      redirect_to @carousel, notice: 'Carousel was successfully updated.' }
+      redirect_to @carousel, notice: 'Carousel was successfully updated.'
     else
-      { render :edit }
+      render :edit
     end
   end
 
