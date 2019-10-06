@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  description: MyText
+  alt_text: MyText
+  container: one
+  container_type: Container
+
+two:
+  name: MyText
+  description: MyText
+  alt_text: MyText
+  container: two
+  container_type: Container

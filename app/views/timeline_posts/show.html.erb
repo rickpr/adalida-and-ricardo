@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timeline:</strong>
+  <%= @timeline_post.timeline_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @timeline_post.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @timeline_post.description %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @timeline_post.body %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @timeline_post.date %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @timeline_post.image if @timeline_post.image.attached?  %>
+</p>
+
+<p>
+  <strong>Image alt text:</strong>
+  <%= @timeline_post.image_alt_text %>
+</p>
+
+<%= link_to 'Edit', edit_timeline_timeline_post_path(@timeline, @timeline_post) %> |
+<%= link_to 'Back', timeline_timeline_posts_path(@timeline) %>

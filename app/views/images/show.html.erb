@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @image.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @image.description %>
+</p>
+
+<p>
+  <strong>Alt text:</strong>
+  <%= @image.alt_text %>
+</p>
+
+<p>
+  <strong>Container:</strong>
+  <%= @image.container_id %>
+</p>
+
+<%= link_to 'Edit', edit_carousel_image_path(@container, @image) %> |
+<%= link_to 'Back', carousel_images_path(@container) %>
