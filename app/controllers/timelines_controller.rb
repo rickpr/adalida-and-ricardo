@@ -24,7 +24,7 @@ class TimelinesController < ApplicationController
     @timeline = Timeline.new(timeline_params)
 
     if @timeline.save
-      format.html { redirect_to @timeline, notice: 'Timeline was successfully created.' }
+      redirect_to @timeline, notice: 'Timeline was successfully created.'
     else
       render :new
     end
