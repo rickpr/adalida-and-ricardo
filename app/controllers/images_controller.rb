@@ -27,28 +27,20 @@ class ImagesController < ApplicationController
   def create
     @image = @container.images.new(image_params)
 
-    respond_to do |format|
-      if @image.save
-        format.html { redirect_to [@container, @image], notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: [@container, @image] }
-      else
-        format.html { render :new }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
+    if @image.save
+      redirect_to [@container, @image], notice: 'Image was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /#{container_type}/1/images/1
   # PATCH/PUT /#{container_type}/1/images/1.json
   def update
-    respond_to do |format|
-      if @image.update(image_params)
-        format.html { redirect_to [@container, @image], notice: 'Image was successfully updated.' }
-        format.json { render :show, status: :ok, location: [@container, @image] }
-      else
-        format.html { render :edit }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
+    if @image.update(image_params)
+      redirect_to [@container, @image], notice: 'Image was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -56,10 +48,7 @@ class ImagesController < ApplicationController
   # DELETE /#{container_type}/1/images/1.json
   def destroy
     @image.destroy
-    respond_to do |format|
-      format.html { redirect_to carousel_images_url(@container), notice: 'Image was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to carousel_images_url(@container), notice: 'Image was successfully destroyed.'
   end
 
   private

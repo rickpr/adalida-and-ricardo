@@ -27,28 +27,20 @@ class TimelinePostsController < ApplicationController
   def create
     @timeline_post = @timeline.timeline_posts.new(timeline_post_params)
 
-    respond_to do |format|
-      if @timeline_post.save
-        format.html { redirect_to [@timeline, @timeline_post], notice: 'Timeline post was successfully created.' }
-        format.json { render :show, status: :created, location: [@timeline, @timeline_post] }
-      else
-        format.html { render :new }
-        format.json { render json: @timeline_post.errors, status: :unprocessable_entity }
-      end
+    if @timeline_post.save
+      redirect_to [@timeline, @timeline_post], notice: 'Timeline post was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /timelines/1/timeline_posts/1
   # PATCH/PUT /timelines/1/timeline_posts/1.json
   def update
-    respond_to do |format|
-      if @timeline_post.update(timeline_post_params)
-        format.html { redirect_to [@timeline, @timeline_post], notice: 'Timeline post was successfully updated.' }
-        format.json { render :show, status: :ok, location: [@timeline, @timeline_post] }
-      else
-        format.html { render :edit }
-        format.json { render json: @timeline_post.errors, status: :unprocessable_entity }
-      end
+    if @timeline_post.update(timeline_post_params)
+      redirect_to [@timeline, @timeline_post], notice: 'Timeline post was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -56,10 +48,7 @@ class TimelinePostsController < ApplicationController
   # DELETE /timelines/1/timeline_posts/1.json
   def destroy
     @timeline_post.destroy
-    respond_to do |format|
-      format.html { redirect_to timeline_timeline_posts_url(@timeline), notice: 'Timeline post was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to timeline_timeline_posts_url(@timeline), notice: 'Timeline post was successfully destroyed.'
   end
 
   private
