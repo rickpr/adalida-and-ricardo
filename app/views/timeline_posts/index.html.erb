@@ -1,11 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Timeline Posts</h1>
+<h1>Timeline Posts for <%= @timeline.name %></h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Timeline</th>
       <th>Title</th>
       <th>Description</th>
       <th>Body</th>
@@ -19,12 +18,11 @@
   <tbody>
     <% @timeline_posts.each do |timeline_post| %>
       <tr>
-        <td><%= timeline_post.timeline.name %></td>
         <td><%= timeline_post.title %></td>
         <td><%= timeline_post.description %></td>
         <td><%= timeline_post.body %></td>
         <td><%= timeline_post.date %></td>
-        <td><%= image_tag timeline_post.image if timeline_post.image.attached? %></td>
+        <td><%= image_tag timeline_post.image, height: '30px' if timeline_post.image.attached? %></td>
         <td><%= timeline_post.image_alt_text %></td>
         <td><%= link_to 'Show', [@timeline, timeline_post] %></td>
         <td><%= link_to 'Edit', edit_timeline_timeline_post_path(@timeline, timeline_post) %></td>

@@ -3,13 +3,11 @@ class ImagesController < ApplicationController
   before_action :set_image, only: %i[show edit update destroy]
 
   # GET /#{container_type}/1/images
-  # GET /#{container_type}/1//images.json
   def index
     @images = @container.images
   end
 
   # GET /#{container_type}/1/images/1
-  # GET /#{container_type}/1/images/1.json
   def show
   end
 
@@ -23,7 +21,6 @@ class ImagesController < ApplicationController
   end
 
   # POST /#{container_type}/1/images
-  # POST /#{container_type}/1/images.json
   def create
     @image = @container.images.new(image_params)
 
@@ -35,7 +32,6 @@ class ImagesController < ApplicationController
   end
 
   # PATCH/PUT /#{container_type}/1/images/1
-  # PATCH/PUT /#{container_type}/1/images/1.json
   def update
     if @image.update(image_params)
       redirect_to [@container, @image], notice: 'Image was successfully updated.'
@@ -45,7 +41,6 @@ class ImagesController < ApplicationController
   end
 
   # DELETE /#{container_type}/1/images/1
-  # DELETE /#{container_type}/1/images/1.json
   def destroy
     @image.destroy
     redirect_to carousel_images_url(@container), notice: 'Image was successfully destroyed.'

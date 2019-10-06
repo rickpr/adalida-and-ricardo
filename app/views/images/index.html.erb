@@ -2,7 +2,7 @@
 
 <h1>Images</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -19,7 +19,7 @@
         <td><%= image.name %></td>
         <td><%= image.description %></td>
         <td><%= image.alt_text %></td>
-        <td><%= image_tag image.image if image.image.attached? %></td>
+        <td><%= image_tag(image.image, height: '30px') if image.image.attached? %></td>
         <td><%= link_to 'Show', [@container, image] %></td>
         <td><%= link_to 'Edit', edit_carousel_image_path(@container, image) %></td>
         <td><%= link_to 'Destroy', [@container, image], method: :delete, data: { confirm: 'Are you sure?' } %></td>

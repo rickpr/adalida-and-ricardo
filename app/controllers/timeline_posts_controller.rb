@@ -3,13 +3,11 @@ class TimelinePostsController < ApplicationController
   before_action :set_timeline_post, only: %i[show edit update destroy]
 
   # GET /timelines/1/timeline_posts
-  # GET /timelines/1/timeline_posts.json
   def index
     @timeline_posts = @timeline.timeline_posts.all
   end
 
   # GET /timelines/1/timeline_posts/1
-  # GET /timelines/1/timeline_posts/1.json
   def show
   end
 
@@ -23,7 +21,6 @@ class TimelinePostsController < ApplicationController
   end
 
   # POST /timelines/1/timeline_posts
-  # POST /timelines/1/timeline_posts.json
   def create
     @timeline_post = @timeline.timeline_posts.new(timeline_post_params)
 
@@ -35,7 +32,6 @@ class TimelinePostsController < ApplicationController
   end
 
   # PATCH/PUT /timelines/1/timeline_posts/1
-  # PATCH/PUT /timelines/1/timeline_posts/1.json
   def update
     if @timeline_post.update(timeline_post_params)
       redirect_to [@timeline, @timeline_post], notice: 'Timeline post was successfully updated.'
@@ -45,7 +41,6 @@ class TimelinePostsController < ApplicationController
   end
 
   # DELETE /timelines/1/timeline_posts/1
-  # DELETE /timelines/1/timeline_posts/1.json
   def destroy
     @timeline_post.destroy
     redirect_to timeline_timeline_posts_url(@timeline), notice: 'Timeline post was successfully destroyed.'

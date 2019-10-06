@@ -2,13 +2,11 @@ class CarouselsController < ApplicationController
   before_action :set_carousel, only: %i[show edit update destroy]
 
   # GET /carousels
-  # GET /carousels.json
   def index
     @carousels = Carousel.all
   end
 
   # GET /carousels/1
-  # GET /carousels/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class CarouselsController < ApplicationController
   end
 
   # POST /carousels
-  # POST /carousels.json
   def create
     @carousel = Carousel.new(carousel_params)
 
@@ -34,7 +31,6 @@ class CarouselsController < ApplicationController
   end
 
   # PATCH/PUT /carousels/1
-  # PATCH/PUT /carousels/1.json
   def update
     if @carousel.update(carousel_params)
       redirect_to @carousel, notice: 'Carousel was successfully updated.'
@@ -44,7 +40,6 @@ class CarouselsController < ApplicationController
   end
 
   # DELETE /carousels/1
-  # DELETE /carousels/1.json
   def destroy
     @carousel.destroy
     redirect_to carousels_url, notice: 'Carousel was successfully destroyed.'
