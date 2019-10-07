@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'home/index'
   root 'home#index'
+  post 'update_build', to: 'home#update_build'
   resources :carousels do
     resources :images
   end
