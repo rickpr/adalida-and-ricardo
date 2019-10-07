@@ -1,4 +1,12 @@
-<%= link_to 'Carousels', carousels_path, class: 'btn btn-success' %>
-<%= link_to 'Timelines', timelines_path, class: 'btn btn-primary' %>
-<%= link_to 'Update Build', update_build_path, method: :post, remote: true, class: 'btn btn-warning' %>
-<%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to the administration tool.</h1>
+  <p class="lead">Start by adding a Carousel.</p>
+  <hr class="my-4">
+  <p>Follow up by adding a TimelinePost to the main Timeline.</p>
+  <hr class="my-4">
+  <p>Update the build to deploy your changes to the front-end.</p>
+  <%= link_to 'Carousels', carousels_path, class: 'btn btn-success' %>
+  <%= link_to 'Timelines', timelines_path, class: 'btn btn-primary' %>
+  <%= link_to 'Update Build', update_build_path, method: :post, remote: true, class: 'btn btn-warning' %>
+  <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+</div>
