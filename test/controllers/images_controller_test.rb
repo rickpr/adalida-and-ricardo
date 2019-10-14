@@ -6,17 +6,17 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     @image = images(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get carousel_images_url(@carousel)
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_carousel_image_url(@carousel)
     assert_response :success
   end
 
-  test "should create image" do
+  test 'should create image' do
     assert_difference('Image.count') do
       post carousel_images_url(@carousel), params: {
         image: {
@@ -32,17 +32,17 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to carousel_image_url(@carousel, Image.last)
   end
 
-  test "should show image" do
+  test 'should show image' do
     get carousel_image_url(@carousel, @image)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_carousel_image_url(@carousel, @image)
     assert_response :success
   end
 
-  test "should update image" do
+  test 'should update image' do
     patch carousel_image_url(@carousel, @image), params: {
       image: {
         alt_text: @image.alt_text,
@@ -55,7 +55,7 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to carousel_image_url(@carousel, @image)
   end
 
-  test "should destroy image" do
+  test 'should destroy image' do
     assert_difference('Image.count', -1) do
       delete carousel_image_url(@carousel, @image)
     end

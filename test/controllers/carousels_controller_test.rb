@@ -5,17 +5,17 @@ class CarouselsControllerTest < ActionDispatch::IntegrationTest
     @carousel = carousels(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get carousels_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_carousel_url
     assert_response :success
   end
 
-  test "should create carousel" do
+  test 'should create carousel' do
     assert_difference('Carousel.count') do
       post carousels_url, params: { carousel: { description: @carousel.description, name: @carousel.name } }
     end
@@ -23,22 +23,22 @@ class CarouselsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to carousel_url(Carousel.last)
   end
 
-  test "should show carousel" do
+  test 'should show carousel' do
     get carousel_url(@carousel)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_carousel_url(@carousel)
     assert_response :success
   end
 
-  test "should update carousel" do
+  test 'should update carousel' do
     patch carousel_url(@carousel), params: { carousel: { description: @carousel.description, name: @carousel.name } }
     assert_redirected_to carousel_url(@carousel)
   end
 
-  test "should destroy carousel" do
+  test 'should destroy carousel' do
     assert_difference('Carousel.count', -1) do
       delete carousel_url(@carousel)
     end

@@ -3,6 +3,10 @@ class Image < ApplicationRecord
   has_one_attached :image
 
   def raw_service_url
-    URI(image.service_url).tap { |service_url| service_url.query = '' }
+    if Rails.env.development? || Rails.env.test?
+      Rails.application.routes.url_helpers.rails_blob_url(image)
+    else
+      URI(image.service_url).tap { |service_url| service_url.query = '' }
+    end
   end
 end
