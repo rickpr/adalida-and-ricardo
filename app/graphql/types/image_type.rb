@@ -9,7 +9,7 @@ module Types
     def image_url
       return '' unless object.image.attached?
 
-      Rails.application.routes.url_helpers.rails_blob_url(object.image)
+      object.raw_service_url
     end
   end
 end
