@@ -17,7 +17,6 @@ class TimelinePostsTest < ApplicationSystemTestCase
     fill_in "Body", with: @timeline_post.body
     fill_in "Date", with: @timeline_post.date
     fill_in "Description", with: @timeline_post.description
-    fill_in "Image alt text", with: @timeline_post.image_alt_text
     fill_in "Timeline", with: @timeline_post.timeline_id
     fill_in "Title", with: @timeline_post.title
     click_on "Create Timeline post"
@@ -33,7 +32,6 @@ class TimelinePostsTest < ApplicationSystemTestCase
     fill_in "Body", with: @timeline_post.body
     fill_in "Date", with: @timeline_post.date
     fill_in "Description", with: @timeline_post.description
-    fill_in "Image alt text", with: @timeline_post.image_alt_text
     fill_in "Timeline", with: @timeline_post.timeline_id
     fill_in "Title", with: @timeline_post.title
     click_on "Update Timeline post"

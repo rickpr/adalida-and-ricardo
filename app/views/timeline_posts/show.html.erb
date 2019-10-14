@@ -25,15 +25,5 @@
   <%= @timeline_post.date %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @timeline_post.image if @timeline_post.image.attached?  %>
-</p>
-
-<p>
-  <strong>Image alt text:</strong>
-  <%= @timeline_post.image_alt_text %>
-</p>
-
 <%= link_to 'Edit', edit_timeline_timeline_post_path(@timeline, @timeline_post) %> |
 <%= link_to 'Back', timeline_timeline_posts_path(@timeline) %>

@@ -7,7 +7,6 @@ module Types
     field :description,    String,       null: true
     field :body,           String,       null: true
     field :date,           String,       null: true
-    field :image_alt_text, String,       null: true
     field :image_url,      String,       null: true
 
     def image_url

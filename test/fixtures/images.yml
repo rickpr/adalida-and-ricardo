@@ -5,11 +5,11 @@ one:
   description: MyText
   alt_text: MyText
   container: one
-  container_type: Container
+  container_type: Carousel
 
 two:
   name: MyText
   description: MyText
   alt_text: MyText
   container: two
-  container_type: Container
+  container_type: Carousel

@@ -2,16 +2,16 @@
 
 one:
   timeline: one
+  carousel: one
   title: MyText
   description: MyText
   body: MyText
   date: 2019-10-05
-  image_alt_text: MyText
 
 two:
   timeline: two
+  carousel: two
   title: MyText
   description: MyText
   body: MyText
   date: 2019-10-05
-  image_alt_text: MyText
