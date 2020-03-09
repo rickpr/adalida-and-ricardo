@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
@@ -18,7 +18,7 @@ gem 'turbolinks'
 # Allow requests from react
 gem 'rack-cors'
 # GraphQL Server
-gem 'graphql'
+gem 'graphql', git: 'git@github.com:rickpr/graphql-ruby.git'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
