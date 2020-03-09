@@ -18,7 +18,7 @@ gem 'turbolinks'
 # Allow requests from react
 gem 'rack-cors'
 # GraphQL Server
-gem 'graphql', git: 'git@github.com:rickpr/graphql-ruby.git'
+gem 'graphql', github: 'rickpr/graphql-ruby'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

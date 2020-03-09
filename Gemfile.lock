@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:rickpr/graphql-ruby.git
+  remote: https://github.com/rickpr/graphql-ruby.git
   revision: 77bd0af23405ccade921cf18ef26bc5cc0482434
   specs:
     graphql (1.10.4)
