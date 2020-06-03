@@ -22,22 +22,22 @@ import Sortable from 'sortablejs'
 
 document.addEventListener('turbolinks:load', () => {
   $('[data-toggle="tooltip"]').tooltip()
-  addImageSorting()
+  addSorting()
 })
 
-function addImageSorting() {
-  const sortableImages = document.getElementById('sortImages')
-  if(sortableImages) Sortable.create(sortableImages, { onEnd: reorderImages })
+function addSorting() {
+  const sortableTable = document.getElementById('sortable')
+  if(sortableTable) Sortable.create(sortableTable, { onEnd: reorderRows })
 
-  function reorderImages(event) {
-    const newPosition = event.newIndex
-    if(event.oldIndex === newPosition) return
+  function reorderRows(event) {
+    if(event.oldIndex === event.newIndex) return
 
-    const imageId = event.item.id
+    const newPosition = event.newIndex + 1
+    const itemId = event.item.id
     const csrfToken = document.querySelector("[name='csrf-token']").content
     writeNotice('Reordering list...')
 
-    fetch(imageId, {
+    fetch(itemId, {
       method: 'PATCH',
       headers: {
         'X-CSRF-Token': csrfToken,

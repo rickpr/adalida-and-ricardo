@@ -33,6 +33,8 @@ class TimelinePostsController < ApplicationController
 
   # PATCH/PUT /timelines/1/timeline_posts/1
   def update
+    return @timeline_post.insert_at(params[:insert_at]) if params[:insert_at]
+
     if @timeline_post.update(timeline_post_params)
       redirect_to [@timeline, @timeline_post], notice: 'Timeline post was successfully updated.'
     else

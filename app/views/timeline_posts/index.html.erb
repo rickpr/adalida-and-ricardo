@@ -14,9 +14,9 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="sortable">
     <% @timeline_posts.each do |timeline_post| %>
-      <tr>
+      <tr id="<%= timeline_post.id %>">
         <td><%= timeline_post.title %></td>
         <td><%= timeline_post.description %></td>
         <td><%= timeline_post.body %></td>
