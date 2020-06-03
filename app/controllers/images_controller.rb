@@ -33,6 +33,8 @@ class ImagesController < ApplicationController
 
   # PATCH/PUT /#{container_type}/1/images/1
   def update
+    return @image.insert_at(params[:insert_at]) if params[:insert_at]
+
     if @image.update(image_params)
       redirect_to [@container, @image], notice: 'Image was successfully updated.'
     else

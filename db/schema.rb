@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_002753) do
+ActiveRecord::Schema.define(version: 2020_04_08_051124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_002753) do
     t.bigint "container_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "position"
     t.index ["container_type", "container_id"], name: "index_images_on_container_type_and_container_id"
   end
 
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_002753) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "carousel_id"
+    t.integer "position"
     t.index ["carousel_id"], name: "index_timeline_posts_on_carousel_id"
     t.index ["timeline_id"], name: "index_timeline_posts_on_timeline_id"
   end
