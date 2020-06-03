@@ -50,7 +50,7 @@ function addImageSorting() {
   }
 
   function writeNotice(message) {
-    const notice = document.getElementById(notice)
+    const notice = document.getElementById('notice')
     if(notice) notice.innerText = message
   }
 }
