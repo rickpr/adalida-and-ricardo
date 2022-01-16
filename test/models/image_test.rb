@@ -6,7 +6,7 @@ class ImageTest < ActiveSupport::TestCase
     image = Image.new
     image.image = fixture_file_upload(Rails.root.join('public', 'apple-touch-icon.png'), 'image/png')
     assert_match(
-      /http:\/\/test\.fake\/rails\/active_storage\/blobs\/[^\/]+\/apple-touch-icon.png$/,
+      /http:\/\/test\.fake\/rails\/active_storage\/blobs\/redirect\/[^\/]+\/apple-touch-icon.png$/,
       image.raw_service_url(:original)
     )
   end
